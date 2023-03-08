@@ -15,7 +15,6 @@ class TodoView extends StatefulWidget {
 
 class _TodoViewState extends State<TodoView> {
   bool _taskDone = false;
-  // List _taskList = TodoView.taskList;
   List _todoList = [];
   List _doneList = [];
   List _viewList = [];
@@ -64,62 +63,14 @@ class _TodoViewState extends State<TodoView> {
         ],
       ),
 
-      body: ListView.builder(
-          itemCount: _viewList.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 50,
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    width: 1.0,
-                    color: Colors.blueGrey
-                  ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Row(
-                  children: [
-                    SizedBox(
-                      width: 50,
-                      child: Checkbox(
-                          value: _viewList[index]["done"],
-                          onChanged: (_){
-                            changeTaskList(_viewList[index]["id"]);
-                          },
-                      ),
-                    ),
-                    Expanded(
-                      child: Text(
-                        _viewList[index]["text"],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
-                      child: Text(
-                        _viewList[index]["deadline"],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          }
-      ),
+      /// TODO
+      /// ListViewを使ってタスクリストを表示する
+      body: null,
 
       floatingActionButton: FloatingActionButton(
         onPressed: (){
-          Navigator.of(context).push(
-              MaterialPageRoute(
-                  builder: (context){
-                    return const TaskMakeView();
-                  }
-              )
-          ).then((value) => {
-            setState(() {
-              updateTaskList();
-            })
-          });
+          /// TODO
+          /// 新規作成画面へ遷移
         },
         child: const Icon(Icons.add),
       ),

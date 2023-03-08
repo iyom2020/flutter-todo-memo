@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_todo_memo/scenes/todo_view.dart';
 
 class TaskMakeView extends StatefulWidget {
   const TaskMakeView({Key? key}) : super(key: key);
@@ -9,7 +8,6 @@ class TaskMakeView extends StatefulWidget {
 }
 
 class _TaskMakeViewState extends State<TaskMakeView> {
-  String _text = "";
   var now = DateTime.now();
   String _deadline = "";
 
@@ -38,13 +36,10 @@ class _TaskMakeViewState extends State<TaskMakeView> {
                 fontSize: 20,
               ),
             ),
-            TextFormField(
-              onChanged: (String value) {
-                setState(() {
-                  _text = value;
-                });
-              },
-            ),
+
+            /// TODO
+            /// 入力フォームを作る
+
             const Text(
               "締切",
               style: TextStyle(
@@ -69,17 +64,11 @@ class _TaskMakeViewState extends State<TaskMakeView> {
             ),
             ElevatedButton(
                 onPressed: (){
-                  if(_text != "") {
-                    TodoView.taskList.add(
-                      {
-                        "id": TodoView.taskList.length + 1,
-                        "done": false,
-                        "text": _text,
-                        "deadline": _deadline
-                      }
-                    );
-                  }
-                  Navigator.pop(context);
+                  /// TODO
+                  /// TodoView.taskListに新しいタスクを追加する
+
+                  /// TODO
+                  /// TodoView画面に戻る
                 },
                 child: const Text("登録"),
             )
